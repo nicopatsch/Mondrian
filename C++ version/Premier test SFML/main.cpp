@@ -1,4 +1,3 @@
-
 //
 // Disclaimer:
 // ----------
@@ -153,6 +152,7 @@ void sliceRectangle(sf::RenderTexture& renderTexture, bool isVertical, int width
             posy2 = posy + pos;
         }
         
+        std::cout << posx1 << ", " << posy1 << " ; " << posx2 << ", " << posy2 << std::endl;
         if (width1>stepX & width2>stepX & height1>stepY & width2>stepY) {
             // Set the rectangles
             sf::RectangleShape rectangle1(sf::Vector2f(width1, height1));

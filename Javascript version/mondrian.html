@@ -3,9 +3,45 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src = "mondrian.js" ></script>
 	
+	<link rel="stylesheet" href="style.css">
 
-	<h1>Trying Two</h1>
-	<button onclick="Run()">clic</button>
-	<div id="draw-shapes"></div>
+	<div class="container">
+		<h1>Hack Mondrian</h1>
+
+		<div class="bio">
+			<img src="mondrian.jpg">
+			<p>Ecrire une petite biographie de notre ami Mondrian ici.</p>
+		</div>
+		
+		<div class="parameters">
+			<div>
+				<input type="checkbox" name="autoUpdate" id="autoUpdateCheckbox" onchange="GetParams()">Update drawing automatically<br>
+			</div>
+
+			<div>
+				<p>Depth of redivision</p>
+				<input type="range" min="1" max="10" value="4" id="maxIndexSlider" onchange="UpdateAll()">
+			</div>
+			<div>
+				<p>Line width</p>
+				<input type="range" min="0" max="2000" value="400" id="lineWidthSlider" oninput="UpdateLine()">
+			</div>
+			<div>
+				<p>Color probabilities</p>
+				<p>Red<input type="range" min="0" max="100" value="15" id="redProbabilitySlider" oninput="UpdateProbabilities('Red')"></p>
+				<p>Blue<input type="range" min="0" max="100" value="15" id="blueProbabilitySlider" oninput="UpdateProbabilities('Blue')"></p>
+				<p>Yellow<input type="range" min="0" max="100" value="15" id="yellowProbabilitySlider" oninput="UpdateProbabilities('Yellow')"></p>
+				<p>Black<input type="range" min="0" max="100" value="15" id="blackProbabilitySlider" oninput="UpdateProbabilities('Black')"></p>
+				<p>White<input type="range" min="0" max="100" value="40" id="whiteProbabilitySlider" oninput="UpdateProbabilities('White')"></p>
+			</div>
+
+		</div>
+
+		<button onclick="Run()">New drawing please</button>
+		
+		<div id="drawing-container">
+			<div id="drawing-content"></div>
+		</div>
+	</div>
 
 </body>

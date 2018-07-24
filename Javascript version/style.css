@@ -1,0 +1,35 @@
+:root {
+	--mondrian-yellow: rgb(250, 209, 72);
+	--mondrian-black: rgb(29, 29, 26);
+	--mondrian-red: rgb(193, 40, 40);
+	--mondrian-blue: rgb(56, 73, 118);
+	--mondrian-white: rgb(246, 246, 239);
+}
+
+body {
+	background-color: var(--mondrian-red);
+}
+
+
+.container {
+	background-color: var(--mondrian-white);
+
+	margin: 50 auto;
+    width: 800;
+    border: 5px solid var(--mondrian-black);
+    padding: 10px;
+
+    text-align: center;
+}
+
+.container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#drawing-container {
+	padding:10px;
+
+}
