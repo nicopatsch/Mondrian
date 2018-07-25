@@ -3,45 +3,87 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src = "mondrian.js" ></script>
 	
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<div class="container">
-		<h1>Hack Mondrian</h1>
+	<div class="main-container">
+		<div class="zeroth row-container row">
+			<div class="aside left col-sm-2"></div>
 
-		<div class="bio">
-			<img src="mondrian.jpg">
-			<p>Ecrire une petite biographie de notre ami Mondrian ici.</p>
+			<div class="title column-container col-sm-8">
+				<h1>Hack Mondrian</h1>
+			</div>
+
+			<div class="aside right col-sm-2"></div>
 		</div>
+
+		<div class="first row-container row">
+			<div class="aside left col-sm-2"></div>
+
+			<div class="bio column-container col-sm-4">
+				<p>Ecrire une petite biographie de notre ami Mondrian ici.</p>
+			</div>
+
+			<div class="photo column-container col-sm-4">
+				<img src="mondrian.jpg">
+			</div>
+
+			<div class="aside right col-sm-2"></div>
+		</div>
+
+
+		<div class="second row-container row">
+			<div class="aside left col-sm-2"></div>
+
+			<div class="parameters column-container col-sm-2">
+				<div>
+					<input type="checkbox" name="autoUpdate" id="autoUpdateCheckbox" onchange="GetParams()">Update drawing automatically<br>
+				</div>
+
+				<div>
+					<p>Depth of redivision</p>
+					<input type="range" min="1" max="10" value="4" id="maxIndexSlider" onchange="UpdateAll()">
+				</div>
+				<div>
+					<p>Line width</p>
+					<input type="range" min="0" max="2000" value="400" id="lineWidthSlider" oninput="UpdateLine()">
+				</div>
+				<div>
+					<p>Color probabilities</p>
+					<p>Red<input type="range" min="0" max="100" value="15" id="redProbabilitySlider" oninput="UpdateProbabilities('Red')"></p>
+					<p>Blue<input type="range" min="0" max="100" value="15" id="blueProbabilitySlider" oninput="UpdateProbabilities('Blue')"></p>
+					<p>Yellow<input type="range" min="0" max="100" value="15" id="yellowProbabilitySlider" oninput="UpdateProbabilities('Yellow')"></p>
+					<p>Black<input type="range" min="0" max="100" value="15" id="blackProbabilitySlider" oninput="UpdateProbabilities('Black')"></p>
+					<p>White<input type="range" min="0" max="100" value="40" id="whiteProbabilitySlider" oninput="UpdateProbabilities('White')"></p>
+				</div>
+
+				<button onclick="Run()">New drawing please</button>
+
+			</div>
+
+			
+			
+			<div id="drawing" class="column-container col-sm-6">
+				<div id="drawing-content">
+				</div>
+			</div>
+
+			<div class="aside right col-sm-2"></div>
+		</div>
+
+		<div class="third row-container row">
+			<div class="aside left col-sm-2"></div>
+
+			<div class="footer column-container col-sm-8">
+				<p>Nicolas Patschkowski © 2018</p>
+			</div>
+
+			<div class="aside right col-sm-2"></div>
+		</div>
+
+
 		
-		<div class="parameters">
-			<div>
-				<input type="checkbox" name="autoUpdate" id="autoUpdateCheckbox" onchange="GetParams()">Update drawing automatically<br>
-			</div>
-
-			<div>
-				<p>Depth of redivision</p>
-				<input type="range" min="1" max="10" value="4" id="maxIndexSlider" onchange="UpdateAll()">
-			</div>
-			<div>
-				<p>Line width</p>
-				<input type="range" min="0" max="2000" value="400" id="lineWidthSlider" oninput="UpdateLine()">
-			</div>
-			<div>
-				<p>Color probabilities</p>
-				<p>Red<input type="range" min="0" max="100" value="15" id="redProbabilitySlider" oninput="UpdateProbabilities('Red')"></p>
-				<p>Blue<input type="range" min="0" max="100" value="15" id="blueProbabilitySlider" oninput="UpdateProbabilities('Blue')"></p>
-				<p>Yellow<input type="range" min="0" max="100" value="15" id="yellowProbabilitySlider" oninput="UpdateProbabilities('Yellow')"></p>
-				<p>Black<input type="range" min="0" max="100" value="15" id="blackProbabilitySlider" oninput="UpdateProbabilities('Black')"></p>
-				<p>White<input type="range" min="0" max="100" value="40" id="whiteProbabilitySlider" oninput="UpdateProbabilities('White')"></p>
-			</div>
-
-		</div>
-
-		<button onclick="Run()">New drawing please</button>
-		
-		<div id="drawing-container">
-			<div id="drawing-content"></div>
-		</div>
 	</div>
 
 </body>

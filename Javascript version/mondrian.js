@@ -1,8 +1,8 @@
 //--- PARAMETERS --- //
 
 //FIXED
-var canvasHeight = 700;
-var canvasWidth = 700;
+var canvasHeight = 600;
+var canvasWidth = 800;
 var params = {width: canvasWidth, height: canvasHeight};
 var two;
 
@@ -130,13 +130,19 @@ function GetParams() {
 	maxIndex = jQuery("#maxIndexSlider").val();
 	autoUpdate = jQuery("#autoUpdateCheckbox").prop('checked');
 	linewidth = jQuery("#lineWidthSlider").val() / 100;
+
+	canvasHeight = jQuery('#drawing').height();
+	canvasWidth = jQuery('#drawing').width();
+
+	console.log(canvasWidth, canvasHeight);
 }
 
 
 
 function Run() {
 
-	
+	GetParams();
+
 	two = new Two(params);
 	var elem = document.getElementById("drawing-content");
 	while (elem.firstChild) elem.removeChild(elem.firstChild);
