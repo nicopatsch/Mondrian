@@ -18,6 +18,7 @@ Just visit the website following [this link](http://nicopatsch.github.io/Mondria
 
 Hope you enjoy it!
 
+---
 
 ## TODO
 This is what I'm planing to do next:
@@ -26,5 +27,6 @@ This is what I'm planing to do next:
 - Enhance code so that it doesn't make to small rectangles
 - Enhance code so that it can make several end-to-end cuts in one (and get [this kind of stuff](https://www.tate.org.uk/art/images/work/T/T00/T00648_9.jpg))
 
+---
 
 👋 Hey! If you like this project, think of checking my other projects on [my portfolio](http://nicopatsch.github.io/portfolio). 👋
