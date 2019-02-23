@@ -9,6 +9,7 @@
 body {
 	padding: 0;
 	margin: 0;
+	background-color: var(--mondrian-white);
 }
 
 
@@ -17,6 +18,7 @@ body {
 	width:100%;
 	height:100%;
     text-align: center;
+
 }
 
 .main-container img {
@@ -34,9 +36,14 @@ body {
 
 .zeroth {
 	border-top: 0px;
+
 }
 
-.third {
+.first {
+	height: 600;
+} 
+
+.second {
 	border-bottom: 0px;
 }
 
@@ -52,31 +59,28 @@ body {
 	border-right: 3px solid var(--mondrian-black);
 }
 .parameters {
-	background-color: var(--mondrian-yellow);
-}
-
-.photo {
-	background-color: var(--mondrian-red);
+	/*background-color: var(--mondrian-yellow);*/
 }
 
 
+/*
 .row-container.zeroth > .aside.left {
 	background-color: var(--mondrian-white);
 }
 .row-container.zeroth > .aside.right {
-	background-color: var(--mondrian-yellow);
+	background-color: var(--mondrian-white);
 }
 .row-container.first > .aside.left {
-	background-color: var(--mondrian-blue);
+	background-color: var(--mondrian-white);
 }
 .row-container.first > .aside.right {
 	background-color: var(--mondrian-white);
 }
 .row-container.second > .aside.left {
-	background-color: var(--mondrian-red);
+	background-color: var(--mondrian-white);
 }
 .row-container.second > .aside.right {
-	background-color: var(--mondrian-blue);
+	background-color: var(--mondrian-white);
 }
 .row-container.third > .aside.left {
 	background-color: var(--mondrian-white);
@@ -84,7 +88,7 @@ body {
 .row-container.third > .aside.right {
 	background-color: var(--mondrian-white);
 }
-
+*/
 .drawing button {
 
 }

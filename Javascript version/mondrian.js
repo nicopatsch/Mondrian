@@ -1,8 +1,8 @@
 //--- PARAMETERS --- //
 
 //FIXED
-var canvasHeight = 600;
-var canvasWidth = 800;
+var canvasHeight = 8000;
+var canvasWidth = 8000;
 var params = {width: canvasWidth, height: canvasHeight};
 var two;
 
@@ -143,6 +143,8 @@ function Run() {
 
 	GetParams();
 
+	console.log("run");
+	params = {width: canvasWidth, height: canvasHeight};
 	two = new Two(params);
 	var elem = document.getElementById("drawing-content");
 	while (elem.firstChild) elem.removeChild(elem.firstChild);
@@ -212,7 +214,6 @@ function SplitRectangle(isVertical, width, height, posx, posy, index) {
 
 jQuery(document).ready(function() {
 	GetParams();
-
 	Run();
 	
 });
