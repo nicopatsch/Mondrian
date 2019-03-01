@@ -31,7 +31,6 @@ body {
 
 
 .row-container {
-	border: 3px solid var(--mondrian-black);
 	display: flex;
 }
 
@@ -51,20 +50,20 @@ body {
 .column-container {
 	padding: 10px 0px;
 	background-color: var(--mondrian-white);
-	border-left: 3px solid var(--mondrian-black);
-	border-right: 3px solid var(--mondrian-black);
 }
 
 
 .column-container.title {
-	padding-top: 4em;
-	padding-bottom: 4em;
+	padding-top: 3em;
+	padding-bottom: 1em;
+	padding-left: 3em;
+	text-align: left;
 }
 
-.aside {
+/*.aside {
 	border-left: 3px solid var(--mondrian-black);
 	border-right: 3px solid var(--mondrian-black);
-}
+}*/
 
 
 #drawing {
@@ -81,7 +80,8 @@ body {
 
 
 .parameters.column-container {
-	padding: 2em 4em 2em 2em;
+	/*padding: 2em 4em 2em 2em;*/
+	padding: 40px 64px 32px 40px;
 }
 
 .parameters > div {
@@ -126,9 +126,27 @@ body {
 
 }
 
+/*** Borders ***/
+
+.border-top {
+	border-top: 3px solid var(--mondrian-black);
+}
+
+.border-bottom {
+	border-bottom: : 3px solid var(--mondrian-black);
+}
+
+.border-left {
+	border-left: 3px solid var(--mondrian-black);
+}
+
+.border-right {
+	border-right: 3px solid var(--mondrian-black);
+}
 
 
 
+/*** Style of parameters ***/
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
@@ -138,7 +156,7 @@ body {
     }
     
     input[type='range']::-webkit-slider-runnable-track {
-      height: 5px;
+      height: 10px;
       -webkit-appearance: none;
       margin-top: -1px;
     }
@@ -170,5 +188,10 @@ input[type="range"]::-ms-fill-upper {
 
 
 .bio.column-container {
-	padding: 2em 6em;
+	padding: 2em 3em;
+}
+
+.bio p {
+	text-align: justify;
+	width:500px;
 }

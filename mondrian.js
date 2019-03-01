@@ -3,6 +3,9 @@
 //FIXED
 var canvasHeight = 8000;
 var canvasWidth = 8000;
+
+var minSide = 20;
+
 var params = {width: canvasWidth, height: canvasHeight};
 var two;
 
@@ -53,6 +56,15 @@ function UpdateLine() {
 	GetParams();
 	two.scene.linewidth = linewidth;
 	two.update();
+
+
+	jQuery('.border-top').css("border-top", linewidth+"px solid var(--mondrian-black)");
+	jQuery('.border-bottom').css("border-bottom", linewidth+"px solid var(--mondrian-black)");
+	jQuery('.border-left').css("border-left", linewidth+"px solid var(--mondrian-black)");
+	jQuery('.border-right').css("border-right", linewidth+"px solid var(--mondrian-black)");
+
+	jQuery('.parameters').css("padding-top", (40 - linewidth).toString()+"px");
+	jQuery('.parameters').css("padding-left", (40 - linewidth).toString()+"px");
 }
 
 function UpdateProbabilities(currentlyUpdatedColor) {
@@ -176,7 +188,12 @@ function CreateRectangle(coord) {
 function SplitRectangle(isVertical, width, height, posx, posy, index) {
 	if(index < maxIndex) {
 		if(isVertical) {
+			if(width < 2*minSide) return;
+
 			var pos = width * Math.random();
+
+			if(pos < minSide) pos = minSide;
+			else if(pos > width - minSide) pos = width - minSide;
 
 			var width1 = pos;
             var width2 = width - pos;
@@ -188,7 +205,12 @@ function SplitRectangle(isVertical, width, height, posx, posy, index) {
             var posy2 = posy;
 		} else {
 
+			if(height<2*minSide) return;
+
 			var pos = height * Math.random();
+
+			if(pos < minSide) pos = minSide;
+			else if(pos > height - minSide) pos = height - minSide;
 
 			var height1 = pos;
             var height2 = height - pos;
@@ -215,5 +237,5 @@ function SplitRectangle(isVertical, width, height, posx, posy, index) {
 jQuery(document).ready(function() {
 	GetParams();
 	Run();
-	
+	UpdateLine();
 });
